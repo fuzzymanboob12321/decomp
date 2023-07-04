@@ -841,8 +841,8 @@ static bool32 MatchCall_IsRematchable_NPC(match_call_t matchCall)
 }
 
 static bool32 MatchCall_IsRematchable_Trainer(match_call_t matchCall)
-#ifndef FREE_MATCH_CALL
 {
+    #ifndef FREE_MATCH_CALL
     if (matchCall.trainer->rematchTableIdx >= REMATCH_ELITE_FOUR_ENTRIES)
         return FALSE;
     return gSaveBlock1Ptr->trainerRematches[matchCall.trainer->rematchTableIdx] ? TRUE : FALSE;
